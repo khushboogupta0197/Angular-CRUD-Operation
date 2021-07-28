@@ -1,0 +1,31 @@
+<div>
+  <div class="d-flex flex-row-reverse mt-5">
+  <a routerLink="emplyoee/add/0" type="button" class="btn btn-primary btn-lg">Add Employee</a>
+</div>
+<h1 class="my-5 text-center">EMPLOYEE LIST</h1>
+<table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th colspan="2" class="w-25">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emplyoee of emplyoees">
+        <td>{{emplyoee.id}}</td>
+        <td>{{emplyoee.name}}</td>
+        <td>{{emplyoee.email}}</td>
+        <td>{{emplyoee.phone}}</td>
+        <td>
+          <a [routerLink]="['emplyoee/edit',emplyoee.id]" type="button" class="btn btn-primary btn-lg">Edit</a>          
+        </td>
+          <td>
+          <button type="button" class="btn btn-danger btn-lg" (click)="onDelete(emplyoee.id)">Delete</button>
+        </td>
+      </tr>     
+    </tbody>
+  </table>
+</div>
